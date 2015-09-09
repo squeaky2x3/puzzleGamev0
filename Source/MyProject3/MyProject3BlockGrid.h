@@ -1,7 +1,13 @@
 // Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
 #pragma once
 #include "GameFramework/Actor.h"
+#include "MyProject3Block.h"
 #include "MyProject3BlockGrid.generated.h"
+
+struct blocksAll{
+    //bool state;
+    AMyProject3Block *theBlock;
+};
 
 /** Class used to spawn blocks and manage score */
 UCLASS(minimalapi)
@@ -46,6 +52,9 @@ public:
     
     /** Is the game over? **/
     void checkWin();
+
+    /** All Blocks found here as pointers **/
+	 blocksAll *states;
 
 public:
 	/** Returns DummyRoot subobject **/

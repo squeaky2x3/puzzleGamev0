@@ -7,14 +7,6 @@
 
 #define LOCTEXT_NAMESPACE "PuzzleBlockGrid"
 
-// !!GLOBAL LIST OF BLOCKS STATES!! Initiallized in
-//    AMyProject3BlocksGrid::BeginPlay()
-struct blocksAll{
-    bool state;
-    AMyProject3Block *theBlock;
-};
-blocksAll *states;
-
 AMyProject3BlockGrid::AMyProject3BlockGrid()
 {
 	// Create dummy root scene component
@@ -65,7 +57,6 @@ void AMyProject3BlockGrid::BeginPlay()
 			NewBlock->OwningGrid = this;
             
             states[BlockIndex].theBlock=NewBlock;
-            states[BlockIndex].state=false;
 		}
 	}
 }
